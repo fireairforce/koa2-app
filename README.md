@@ -17,3 +17,5 @@ koa2 koa2-learn  // 否则就是以pug为模板引擎
 npm run dev
 ```
 
+## middlewares
+中间件可以参考`app.js`里面代码，懒得讲了
