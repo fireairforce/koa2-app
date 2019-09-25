@@ -1,7 +1,9 @@
+// 引入koa-router并且生成一波实例
 const router = require("koa-router")();
 
 router.get("/", async (ctx, next) => {
   global.console.log(next);
+  ctx.cookies.set('pvid',Math.random())
   await ctx.render("index", {
     title: "Hello Koa 2!",
   });
@@ -14,6 +16,7 @@ router.get("/string", async (ctx, next) => {
 router.get("/json", async (ctx, next) => {
   ctx.body = {
     title: "koa2 json",
+    cookies: ctx.cookies.get('pvid')
   };
 });
 

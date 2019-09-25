@@ -24,3 +24,32 @@ npm run dev
 
 处理中间价就想在穿越一个圈，先进的会后出。先处理的还是会往后面的中间件里面去给。通过`await next()`进行一个中间价的跳出。如果某个中间件处理之后没有`next`，后面直接出去就会`404`
 
+所以写中间件一定要记得写`next`哈哈哈。
+
+## route 
+
+koa-router可以直接去[gihub仓库](https://github.com/ZijianHe/koa-router)里面看一波文档。很简单的啦~
+
+## cookie 和 session
+根据`koa`里面的`cookie`实例去设置一波就行了，很简单的。
+
+我们直接在访问首页的时候，设置一波cookie即可hhh。
+```js
+router.get("/", async (ctx, next) => {
+  global.console.log(next);
+  ctx.cookies.set('pvid',Math.random())
+  await ctx.render("index", {
+    title: "Hello Koa 2!",
+  });
+});
+```
+
+如果我们需要去使用`cookie`的话，在另外一个接口里面搞一波:
+```js
+router.get("/json", async (ctx, next) => {
+  ctx.body = {
+    title: "koa2 json",
+    cookies: ctx.cookies.get('pvid')
+  };
+});
+```
