@@ -22,6 +22,7 @@
     "koa-views": "^6.2.0"
   },
   "devDependencies": {
+    "mongoose": "^5.7.1",
     "nodemon": "^1.19.1"
   }
 }
