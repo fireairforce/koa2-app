@@ -56,3 +56,15 @@ router.get("/json", async (ctx, next) => {
 
 ## 提交数据给mongod数据库　
 嫌`postman`麻烦直接用`curl -d 'name=wd&age=11' xxx`去提交一发。
+
+## redis
+- redis的概念 & 安装
+
+[redis安装的相关文档](https://www.runoob.com/redis/redis-install.html)
+
+`redis-server`即可启动哦~
+
+```bash
+npm install koa-generic-session koa-redis
+```
+

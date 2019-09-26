@@ -6,6 +6,8 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const session = require('koa-generic-session')
+const Redis = require('koa-redis')
 const pv = require('./middleware/koa-pv')
 const m1 = require('./middleware/m1');
 const m2 = require('./middleware/m2');
@@ -20,6 +22,11 @@ const dbConfig = require('./dbs/config');
 // error handler
 onerror(app)
 
+// 这里来个加密
+app.keys['keys','keyskeys'];
+app.use(session({
+  store:new Redis()
+}))
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text','form-data']
