@@ -22,8 +22,9 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes:['json', 'form', 'text','form-data']
 }))
+
 app.use(pv());
 app.use(m1());
 app.use(m2());

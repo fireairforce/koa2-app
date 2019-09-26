@@ -53,3 +53,6 @@ router.get("/json", async (ctx, next) => {
   };
 });
 ```
+
+## 提交数据给mongod数据库　
+嫌`postman`麻烦直接用`curl -d 'name=wd&age=11' xxx`去提交一发。
