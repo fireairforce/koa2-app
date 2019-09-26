@@ -67,4 +67,9 @@ router.get("/json", async (ctx, next) => {
 ```bash
 npm install koa-generic-session koa-redis
 ```
+这里的用法参考一波[官方文档](https://github.com/koajs/generic-session)
 
+```bash
+redis-cli
+keys *  # 可以查看所有的keys
+```

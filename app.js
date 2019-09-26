@@ -23,10 +23,13 @@ const dbConfig = require('./dbs/config');
 onerror(app)
 
 // 这里来个加密
-app.keys['keys','keyskeys'];
+app.keys = ['keys','keyskeys'];
 app.use(session({
+  prefix:'mt',
+  key:'mtpr',
   store:new Redis()
 }))
+
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text','form-data']
